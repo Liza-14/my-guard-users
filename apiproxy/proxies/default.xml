@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>EV-TokenExtract</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Name>JS-Response</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <Flows>
+        <Flow name="get /users">
+            <Description>Get all users</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="post /users">
+            <Description>Adds user</Description>
+            <Request/>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="get /users/{id}">
+            <Description>Get user by id</Description>
+            <Request>
+                <Step>
+                    <Name>EV-URIExtract</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="patch /users/{id}">
+            <Description>Update user by id</Description>
+            <Request>
+                <Step>
+                    <Name>EV-URIExtract</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*") and (request.verb = "PATCH")</Condition>
+        </Flow>
+        <Flow name="delete /users/{id}">
+            <Description>Delete user by id</Description>
+            <Request>
+                <Step>
+                    <Name>EV-URIExtract</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*") and (request.verb = "DELETE")</Condition>
+        </Flow>
+        <Flow name="get /users/{id}/crimes">
+            <Description>Get all user crimes by id</Description>
+            <Request>
+                <Step>
+                    <Name>EV-URIExtract</Name>
+                </Step>
+                <Step>
+                    <Name>SC-Crimes</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*/crimes") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="post /users/{id}/crimes">
+            <Description>Post user crime item</Description>
+            <Request>
+                <Step>
+                    <Name>EV-URIExtract</Name>
+                </Step>
+                <Step>
+                    <Name>SC-Crimes</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/users/*/crimes") and (request.verb = "POST")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>/v1/my-guard-users</BasePath>
+        <Properties/>
+        <VirtualHost>default</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM-Unauthorized">
+    <DisplayName>AM-Unauthorized</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+            {
+                "Apigee Server": "{apiproxy.name}",
+                "status": 401,
+                "error": "Unauthorized",
+                "message": "Access is denied due to invalid credentials",
+                "path": "{request.path}"
+            }
+        </Payload>
+        <StatusCode>401</StatusCode>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

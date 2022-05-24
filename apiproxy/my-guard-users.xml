@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="my-guard-users">
+    <Basepaths>/v1/my-guard-users</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1652284938448</CreatedAt>
+    <CreatedBy>lizabvb57@gmail.com</CreatedBy>
+    <Description>Users API</Description>
+    <DisplayName>my-guard-users</DisplayName>
+    <LastModifiedAt>1652723148410</LastModifiedAt>
+    <LastModifiedBy>lizabvb57@gmail.com</LastModifiedBy>
+    <ManifestVersion>SHA-512:dc53c6c4fa5fa757d846350b2dfc20840b75648a15f20f761ad3dfbe6aacb8bd8938910dd44b8b8b1fa1152a70c814167076c9c5f893c2687c9eb7d2a5b7c5df:dc-1</ManifestVersion>
+    <Policies>
+        <Policy>AM-BadRequest</Policy>
+        <Policy>AM-Forbidden</Policy>
+        <Policy>AM-NotFound</Policy>
+        <Policy>AM-Unauthorized</Policy>
+        <Policy>EV-TokenExtract</Policy>
+        <Policy>EV-URIExtract</Policy>
+        <Policy>JS-Response</Policy>
+        <Policy>SC-Crimes</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>openapi://association.json</Resource>
+        <Resource>jsc://JS-Response.js</Resource>
+    </Resources>
+    <Spec>https://raw.githubusercontent.com/Liza-14/Users-api/dev/swagger.yaml</Spec>
+    <TargetServers/>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

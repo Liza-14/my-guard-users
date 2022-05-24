@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC-Crimes">
+    <DisplayName>SC-Crimes</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <Set>
+            <Headers>
+                <Header name="Authorization">{tokenValue}</Header>
+            </Headers>
+        </Set>
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    </Request>
+    <Response>calloutResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>https://my-guard.herokuapp.com/users/{id}/crimes</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>
