@@ -1,0 +1,8 @@
+{
+  "url": "https://opdk.neram.net/edu/v1/my-guard-users/users",
+  "incorrectURL":"https://opdk.neram.net/edu/v1/my-guard-users",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM3ZmQwY2Y4LTkwMmEtMTFlYy1iOTA5LTAyNDJhYzEyMDc4MiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjUzNTAyNDE0LCJleHAiOjE2NTM1MDYwMTR9.OZhuZd3QIK1z84V2ffyg1g3daN8gztg48PfYWAlTldf",
+  "testUser": {
+    "id": "6ca151c0-dada-11ec-b74a-23e88a061d4b"
+  }
+}
